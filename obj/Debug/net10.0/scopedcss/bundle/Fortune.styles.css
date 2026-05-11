@@ -1,0 +1,28 @@
+@import '_content/Microsoft.FluentUI.AspNetCore.Components/Microsoft.FluentUI.AspNetCore.Components.lcdo7z9xd2.bundle.scp.css';
+
+/* /Pages/Cookie.razor.rz.scp.css */
+#inner[b-moxb1z93dd] {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 120%;
+    height: 100%;
+    position:relative;
+}
+#inner span[b-moxb1z93dd]{
+    font-weight: bold;
+    position: absolute;
+    max-width: 60%;
+    max-height: 60%;
+    bottom: 0; 
+    right: 0;
+}
+#outer[b-moxb1z93dd] {
+    background-image: url('open.png');
+    /* Essential sizing properties */
+    background-size: cover;      /* Scales image to cover the entire div */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;/* Prevents the image from tiling */
+    width: 250px;
+    height: 100px;               /* Div needs a height to be visible */
+ }

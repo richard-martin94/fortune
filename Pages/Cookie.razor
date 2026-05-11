@@ -1,0 +1,56 @@
+@page "/Cookie"
+@inject HttpClient Http
+
+<PageTitle>Fortune Cookie</PageTitle>
+@if (_fortunes == null)
+{
+    <p>
+        <em>Loading Great* Fortunes...</em>
+    </p>
+    
+    <FluentFooter>*Fortunes may not ever be great</FluentFooter>
+}
+else
+{
+    <h1>Open fortunes below!</h1>
+
+    if (_currentFortune == null)
+    {
+        <FluentButton Appearance="Appearance.Stealth" Style="width: 200px; height: 200px;" OnClick="@OpenFortune">
+            <img alt="image of fortune cookie" src="closed.png" style="width: 100%; height: 100%;"/>
+        </FluentButton>
+    }
+    else
+    {
+        <div id="outer">
+            <div id="inner">
+                <span id="inner">@_currentFortune.Text</span>
+            </div>
+        </div>
+        <FluentButton Appearance="Appearance.Stealth" Style="width: 200px; height: 200px;" OnClick="@OpenFortune">
+            <img alt="image of fortune cookie" src="closed.png" style="width: 100%; height: 100%;"/>
+        </FluentButton>
+    }
+}
+
+@code {
+    private IQueryable<FortuneText>? _fortunes;
+    private Random _random =  new Random();
+    private FortuneText _currentFortune = new FortuneText();
+
+    protected override async Task OnInitializedAsync()
+    {
+        _fortunes = (await Http.GetFromJsonAsync<List<FortuneText>>("fortunes/fortunes.json"))!.AsQueryable();
+        _random = new Random();
+    }
+
+    public class FortuneText
+    {
+        public string? Text { get; set; }
+    }
+
+    private void OpenFortune()
+    {
+        _currentFortune = _fortunes.ElementAt(_random.Next(_fortunes.Count()));
+    }
+}
