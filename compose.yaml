@@ -2,7 +2,7 @@
 services:
   web-api:
     build:
-      context: ./Fortune
+      context: ./
       dockerfile: Dockerfile
     ports:
       - "8080:8080"
