@@ -1,7 +1,0 @@
-﻿services:
-  fortune:
-    image: fortune
-    build:
-      context: .
-      dockerfile: Dockerfile
-
