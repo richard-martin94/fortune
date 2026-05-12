@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "Fortune",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-HfloMPVRJWzoqdkBu2L3nGecL/1s0Sta81d9RflhnZs=",
+    "hash": "sha256-tGxSr0i1JFZqtpHvTtp109Pv6Vh75kGBCZiYTVZGmh0=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.4xbsgn06op.js"
@@ -1290,16 +1290,16 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "Fortune.wasm",
-        "name": "Fortune.1vrg0opavu.wasm",
-        "integrity": "sha256-DWH52XD1gDZHMT9U3PjbfyKReePzUumodO/7Yw704xU=",
+        "name": "Fortune.u1pl72lczh.wasm",
+        "integrity": "sha256-EnFG3oKYQLIT6HcwOgO8LW3I1v4oVyEk+PnqDGR57Qw=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "Fortune.pdb",
-        "name": "Fortune.guhxu9q8bl.pdb",
-        "integrity": "sha256-mBoRIZkEj+tanN7ipraNU3/OjX4wrBTLXVTxu8VfUTc=",
+        "name": "Fortune.id3e01a1js.pdb",
+        "integrity": "sha256-loz8TpdEraJH8YJz+RpO1UZw8l0o0S/NaMhyiGt0ZJ8=",
         "cache": "force-cache"
       }
     ],
