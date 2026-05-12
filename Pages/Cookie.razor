@@ -15,7 +15,7 @@ else
 {
     <h1>Open fortunes below!</h1>
 
-    if (_currentFortune.Text == null)
+    if (_currentFortune.Text == string.Empty)
     {
         <FluentButton Appearance="Appearance.Stealth" Style="width: 200px; height: 200px;" OnClick="@OpenFortune">
             <img alt="image of fortune cookie" src="closed.png" style="width: 100%; height: 100%;"/>
@@ -37,7 +37,7 @@ else
 @code {
     private IQueryable<FortuneText>? _fortunes;
     private Random _random =  new Random();
-    private FortuneText _currentFortune = new FortuneText{Text = null};
+    private FortuneText _currentFortune = new FortuneText{Text = string.Empty};
 
     protected override async Task OnInitializedAsync()
     {
