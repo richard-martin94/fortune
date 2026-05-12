@@ -15,13 +15,9 @@ RUN dotnet build "./Fortune.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "Fortune.csproj" -c $BUILD_CONFIGURATION -o /app/publish
+RUN dotnet publish "./Fortune.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
-FROM nginx:alpine
-WORKDIR /usr/share/nginx/html
-COPY --from=build /app/publish/wwwroot .
-
-#FROM base AS final
-#WORKDIR /app
-#COPY --from=publish /app/publish .
-#ENTRYPOINT ["dotnet", "Fortune.dll"]
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "Fortune.dll"]
