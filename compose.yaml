@@ -1,11 +1,19 @@
 ﻿services:
-  fortune:
-    image: fortune
-    container_name: fortune
+  blazor-app:
     build: 
       context: .
       dockerfile: Dockerfile
+    container_name: fortune-blazor-wasm
     ports:
       - "8080:8081"
+    networks:
+      - "proxy-net"
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.blazor.rule=Host(`fortune.home`)"
+      - "traefik.http.services.blazor.loadbalancer.server.port=8080"
+networks:
+  proxy-net:
+    external: true
     
 
