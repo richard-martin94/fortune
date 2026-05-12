@@ -10,7 +10,7 @@
       - "proxy-net"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.blazor.rule=Host(`fortune.home`)"
+      - 'traefik.http.routers.blazor.rule=Host(`fortune.home`)'
       - "traefik.http.services.blazor.loadbalancer.server.port=8080"
 networks:
   proxy-net:
