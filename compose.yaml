@@ -1,6 +1,7 @@
 ﻿services:
   fortune:
     image: fortune
+    container_name: fortune
     build: 
       context: .
       dockerfile: Dockerfile
